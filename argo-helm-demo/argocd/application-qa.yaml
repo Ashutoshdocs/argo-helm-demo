@@ -1,45 +1,30 @@
 apiVersion: argoproj.io/v1alpha1
-
 kind: Application
 
 metadata:
-
   name: student-dev
-
   namespace: argocd
 
 spec:
-
   project: default
 
   source:
-
     repoURL: https://github.com/Ashutoshdocs/argo-helm-demo.git
-
-    targetRevision: HEAD
-
-    path: charts/student-app
+    targetRevision: main
+    path: argo-helm-demo/charts/student-app
 
     helm:
-
       valueFiles:
-
-      - values-qa.yaml
+        - values-qa.yaml
 
   destination:
-
     server: https://kubernetes.default.svc
-
     namespace: qa
 
   syncPolicy:
-
     automated:
-
       prune: true
-
       selfHeal: true
 
     syncOptions:
-
-    - CreateNamespace=true
+      - CreateNamespace=true
