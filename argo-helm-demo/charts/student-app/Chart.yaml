@@ -1,0 +1,11 @@
+apiVersion: v2
+
+name: student-app
+
+description: Demo Helm Chart
+
+type: application
+
+version: 1.0.0
+
+appVersion: "1.0"
