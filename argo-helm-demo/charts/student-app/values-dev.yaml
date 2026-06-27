@@ -1,4 +1,4 @@
-replicaCount: 40
+replicaCount: 3
 
 image:
 
